@@ -1,0 +1,38 @@
+{
+    "name": "vojislavd/tall-components",
+    "description": "TALL components",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "livewire/livewire": "^3.0",
+        "orchestra/testbench": "^8.2",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TallComponents\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TallComponents\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TallComponents\\Providers\\TallComponentsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
