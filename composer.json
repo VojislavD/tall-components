@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "TallComponents\\Providers\\TallComponentsServiceProvider"
+                "TallComponents\\TallComponentsServiceProvider"
             ]
         }
     },

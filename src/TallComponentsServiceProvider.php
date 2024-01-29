@@ -1,6 +1,6 @@
 <?php
 
-namespace TallComponents\Providers;
+namespace TallComponents;
 
 use Illuminate\Support\ServiceProvider;
 
