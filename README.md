@@ -43,7 +43,7 @@ If you want to change colors or to customize anything else you can publish all c
 php artisan vendor:publish --tag="tall-components"
 ```
 
-To change colors just find `primary`, `primary-dark`, `secondary` or `secondary-dark` in component and replace with color you want to use.
+To change colors just find `primary`, `primary-dark`, `secondary` or `secondary-dark` in component and replace with colors you want to use.
 
 ## Usage
 
@@ -78,7 +78,7 @@ Inside `<x-tc::modal>` tags you can add any content you want to be present in mo
 
 Modal can be opened from blade file, like this:
 
-```
+```blade
     <button type="button" wire:click="$set('openModal', true)">
         Open my modal
     </button>
@@ -99,7 +99,7 @@ class MyComponent extends Component
 
     public function someAction()
     {
-        // do some action
+        // do something
 
         $this->openModal = true;
     }
@@ -109,7 +109,8 @@ class MyComponent extends Component
 Same goes for closing modal, only value of `openModal` will be `false`.
 
 For example, if you want to have button to close modal inside modal itself, you can do it like this:
-```
+
+```blade
 <x-tc:modal model="openModal">
     ... Some content of modal
 
