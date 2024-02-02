@@ -1,7 +1,7 @@
-@props(['width' => 'w-3/4 md:w-1/2 2xl:w-1/3', 'actions' => null])
+@props(['model' => false, 'width' => 'w-3/4 md:w-1/2 2xl:w-1/3', 'actions' => null])
 
 <div
-    x-data="{ open: @entangle($attributes->wire('model')) }"
+    x-data="{ open: @entangle($model) }"
     x-show="open"
     x-cloak
     class="w-full h-screen bg-black bg-opacity-40 fixed top-0 left-0 py-8 flex items-center justify-center z-50"
@@ -29,7 +29,7 @@
 
         <div class="w-full mt-10">
             <div class="px-6 pb-6 py-4">
-                {{ $slot }}
+                {{ $slot }} 
             </div>
 
             @if ($actions)

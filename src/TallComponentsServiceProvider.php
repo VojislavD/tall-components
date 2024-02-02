@@ -19,7 +19,7 @@ class TallComponentsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'tc');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'tc');
 
         if ($this->app->runningInConsole()) {
             // Publish view components

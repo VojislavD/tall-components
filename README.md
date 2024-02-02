@@ -35,7 +35,7 @@ You can install the package via composer:
 composer require vojislavd/tall-components
 ```
 
-Components will use `primary`, `primary-dark`, `secondary` and `secondary-dark` colors. You should configure these colors in your `tailwind.config.js`.\
+Components will use `primary`, `primary-dark`, `secondary` and `secondary-dark` colors. You should configure these colors in your `tailwind.config.js`.
 
 If you want to change colors or to customize anything else you can publish all components with:
 
@@ -43,7 +43,7 @@ If you want to change colors or to customize anything else you can publish all c
 php artisan vendor:publish --tag="tall-components"
 ```
 
-To change colors just find `primary`, `primary-dark`, `secondary` or `secondary-dark` in component and replace with colors you want to use.
+To change colors just find `primary`, `primary-dark`, `secondary` or `secondary-dark` in component and replace with color you want to use.
 
 ## Usage
 
