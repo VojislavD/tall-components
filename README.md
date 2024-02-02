@@ -79,9 +79,9 @@ Inside `<x-tc::modal>` tags you can add any content you want to be present in mo
 Modal can be opened from blade file, like this:
 
 ```blade
-    <button type="button" wire:click="$set('openModal', true)">
-        Open my modal
-    </button>
+<button type="button" wire:click="$set('openModal', true)">
+    Open my modal
+</button>
 ```
 
 Or can be opened from PHP file, like this:
