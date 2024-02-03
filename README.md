@@ -111,15 +111,35 @@ Same goes for closing modal, only value of `openModal` will be `false`.
 For example, if you want to have button to close modal inside modal itself, you can do it like this:
 
 ```blade
-<x-tc:modal model="openModal">
+<x-tc::modal model="openModal">
     ... Some content of modal
 
     <button type="button" wire:click="$set('openModal', false)">
         Cancel
     </button>
-</x-tc:modal>
+</x-tc::modal>
 ```
 
+It's possible to configure width of modal by passing Tailwind CSS class to `width` property of component. For example:
+
+```blade
+<x-tc::modal model="openModal" width="w-1/2">
+    ... Some content of modal
+</x-tc::modal>
+```
+
+You can add action buttons to the bottom of the modal like this:
+
+```blade
+<x-tc::modal model="openModal">
+    ... Some content of modal
+
+    <x-slot::action>
+        <button>Cancel</button>
+        <button>Submit</button>
+    </x-slot::action>
+</x-tc::modal>
+```
 ## Testing
 Run tests with:
 
