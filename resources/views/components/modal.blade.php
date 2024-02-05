@@ -28,7 +28,7 @@
         </button>
 
         <div class="w-full mt-10">
-            <div class="px-6 pb-6 py-4">
+            <div class="px-6 pb-6">
                 {{ $slot }} 
             </div>
 
