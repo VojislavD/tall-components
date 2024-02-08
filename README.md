@@ -42,10 +42,10 @@ npm install && npm run build
 
 Components will use `primary`, `primary-dark`, `secondary` and `secondary-dark` colors. You should configure these colors in your `tailwind.config.js` file.
 
-If you want to change colors or customize anything else, you can publish all components with:
+If you want to change colors or customize anything else, you can publish all components views with:
 
 ```bash
-php artisan vendor:publish --tag="tall-components"
+php artisan vendor:publish --tag="tall-components-views"
 ```
 
 To change colors, just find `primary`, `primary-dark`, `secondary` or `secondary-dark` in the component and replace them with color you want to use.
