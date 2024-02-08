@@ -35,6 +35,11 @@ You can install the package via composer:
 composer require vojislavd/tall-components
 ```
 
+Next, you should compile assets:
+```bash
+npm install && npm run build
+```
+
 Components will use `primary`, `primary-dark`, `secondary` and `secondary-dark` colors. You should configure these colors in your `tailwind.config.js` file.
 
 If you want to change colors or customize anything else, you can publish all components with:
