@@ -24,9 +24,8 @@ class TallComponentsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publish view components
             $this->publishes([
-                __DIR__.'/../View/Components/' => app_path('View/Components'),
-                __DIR__.'/../../resources/views/components/' => resource_path('views/components'),
-            ], 'tall-components-view');
+                __DIR__.'/../resources/views/components/' => resource_path('views/components/tc'),
+            ], 'tall-components-views');
         }
     }
 }
