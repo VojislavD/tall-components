@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 use Livewire\Livewire;
+use Livewire\Mechanisms\CompileLivewireTags\CompileLivewireTags;
 use TallComponents\Livewire\Notification;
 
 class TallComponentsServiceProvider extends ServiceProvider
@@ -19,23 +20,25 @@ class TallComponentsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Livewire::component('notification', Notification::class);
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'tc');
 
         $this->configureComponents();
 
+        $this->configureLivewireComponents();
+
         $this->configurePublishing();
+
     }
 
-    protected function configureComponents()
+    protected function configureComponents(): void
     {
 		$this->callAfterResolving(BladeCompiler::class, function () {
 			$this->registerComponent('modal');
 		});
 	}
 
-    protected function registerComponent(string $component)
+    protected function registerComponent(string $component): void
     {
         $componentName = "tc-$component";
 
@@ -44,13 +47,24 @@ class TallComponentsServiceProvider extends ServiceProvider
         }
     }
 
-    protected function configurePublishing()
+    protected function configureLivewireComponents(): void
+    {
+        Livewire::component('tc-notification', Notification::class);
+    }
+
+    protected function configurePublishing(): void
     {
         if ($this->app->runningInConsole()) {
             // Publish Modal
             $this->publishes([
                 __DIR__.'/../resources/views/components/modal.blade.php' => resource_path('views/components/tc-modal.blade.php'),
             ], 'tall-components-modal');
+
+            // Publish notification
+            $this->publishes([
+                __DIR__.'/../stubs/resources/views/livewire/tc-notification.blade.php' => resource_path('views/livewire/tc-notification.blade.php'),
+                __DIR__.'/../stubs/app/Livewire/TcNotification.php' => app_path('Livewire/TcNotification.php'),
+            ], 'tall-components-notification');
 
             // Clear view cache for the package
             Artisan::call('view:clear');
