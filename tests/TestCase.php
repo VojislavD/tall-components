@@ -53,9 +53,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
      */
     private function cleanState()
     {
-        if (file_exists(resource_path('/views/components/tc/modal.blade.php'))) {
-            unlink(resource_path('/views/components/tc/modal.blade.php'));
-            rmdir(resource_path('/views/components/tc'));
+        if (file_exists(resource_path('/views/components/tc-modal.blade.php'))) {
+            unlink(resource_path('/views/components/tc-modal.blade.php'));
             rmdir(resource_path('/views/components/'));
         }
     }
