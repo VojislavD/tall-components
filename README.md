@@ -54,7 +54,7 @@ To change colors, just find `primary`, `primary-dark`, `secondary` or `secondary
 
 ### Modal
 
-<img src="https://private-user-images.githubusercontent.com/23532087/302423745-52b0b6dd-77e6-454d-91d8-90e83507959e.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDcxNjYyNDksIm5iZiI6MTcwNzE2NTk0OSwicGF0aCI6Ii8yMzUzMjA4Ny8zMDI0MjM3NDUtNTJiMGI2ZGQtNzdlNi00NTRkLTkxZDgtOTBlODM1MDc5NTllLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjA1VDIwNDU0OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRkM2NiMmYwYWFmZDExNWFkNGE4Nzg1YmRlOTNmNTI1ODE5MTIzY2Q5MjU1YWRlMzgwZWEzOGVlNGIyOGYyOTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.YkZgd5ltZf6XxPA9OXYX0KUOryzNTXn2e9BfUjlsIy4">
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/303588933-619c5c08-2a43-4653-a1d4-a375b2a93e09.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240209%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240209T080440Z&X-Amz-Expires=300&X-Amz-Signature=8c87a030ec72677e1d80de2be5d8367c06c6738aa2b28b1fbd45cf123dee0511&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
 
 To use modal, you need have boolean variable inside your Livewire component. Modal will be opened or closed based on the value of that variable.
 
