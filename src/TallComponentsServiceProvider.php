@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
+use Livewire\Livewire;
+use TallComponents\Livewire\Notification;
 
 class TallComponentsServiceProvider extends ServiceProvider
 {
@@ -17,6 +19,8 @@ class TallComponentsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        Livewire::component('notification', Notification::class);
+
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'tc');
 
         $this->configureComponents();
