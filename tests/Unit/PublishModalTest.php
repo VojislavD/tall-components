@@ -5,16 +5,16 @@ namespace TallComponents\Tests\Unit;
 use Illuminate\Support\Facades\File;
 use TallComponents\Tests\TestCase;
 
-class PublishViewsTest extends TestCase
+class PublishModalTest extends TestCase
 {
     /** @test */
-    public function test_publish_view_for_modal_when_not_exists()
+    public function test_publish_modal_when_not_exists()
     {
         mkdir(resource_path('views/components'), 0777, true);
 
         $this->assertFalse(file_exists(resource_path('views/components/tc-modal.blade.php')));
         
-        $this->artisan('vendor:publish --tag="tall-components-views"');
+        $this->artisan('vendor:publish --tag="tall-components-modal"');
 
         $this->assertTrue(file_exists(resource_path('views/components/tc-modal.blade.php')));
 
@@ -25,7 +25,7 @@ class PublishViewsTest extends TestCase
     }
 
     /** @test */
-    public function test_publish_view_for_modal_when_already_exists()
+    public function test_publish_modal_when_already_exists()
     {
         mkdir(resource_path('views/components'), 0777, true);
 
@@ -33,7 +33,7 @@ class PublishViewsTest extends TestCase
         
         File::put(resource_path('views/components/').'tc-modal.blade.php', 'Views test');
 
-        $this->artisan('vendor:publish --tag="tall-components-views"');
+        $this->artisan('vendor:publish --tag="tall-components-modal"');
 
         $this->assertTrue(file_exists(resource_path('views/components/tc-modal.blade.php')));
 
