@@ -76,11 +76,11 @@ In blade file of the same Livewire component, you should add `<x-tc::modal>` and
 Inside `<x-tc::modal>` tags, you can add any content you want to be present in modal.
 
 ```blade
-<x-tc::modal model="openModal">
+<x-tc-modal model="openModal">
     <h1>This is some title</h1>
 
     <p>This is some content</p>
-</x-tc::modal>
+</x-tc-modal>
 ```
 
 The modal can be opened from the blade file, like this:
@@ -118,34 +118,34 @@ The same goes for closing the modal, only the value of `openModal` will be set t
 For example, if you want to have a button to close the modal inside the modal itself, you can do it like this:
 
 ```blade
-<x-tc::modal model="openModal">
+<x-tc-modal model="openModal">
     ... Some content of modal
 
     <button type="button" wire:click="$set('openModal', false)">
         Cancel
     </button>
-</x-tc::modal>
+</x-tc-modal>
 ```
 
 It's possible to configure the width of the modal by passing a Tailwind CSS class to `width` property of the component. For example:
 
 ```blade
-<x-tc::modal model="openModal" width="w-1/2">
+<x-tc-modal model="openModal" width="w-1/2">
     ... Some content of modal
-</x-tc::modal>
+</x-tc-modal>
 ```
 
 You can add action buttons to the bottom of the modal like this:
 
 ```blade
-<x-tc::modal model="openModal">
+<x-tc-modal model="openModal">
     ... Some content of modal
 
     <x-slot::action>
         <button>Cancel</button>
         <button>Submit</button>
     </x-slot::action>
-</x-tc::modal>
+</x-tc-modal>
 ```
 ## Testing
 Run tests with:
