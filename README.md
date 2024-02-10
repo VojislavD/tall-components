@@ -6,7 +6,7 @@ Include:
 
 - [x] [Modal](#modal)
 - [ ] Confirmation modal
-- [x] Notification
+- [x] [Notification][#notification]
 - [ ] Table (search, filters, sort columns)
 - [ ] Loading spinner
 - [ ] Drag & drop file upload (Filepond)
@@ -150,7 +150,7 @@ You can add action buttons to the bottom of the modal like this:
 
 ### Notification
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/303828514-2350f461-0f4a-4eea-bb37-84078252b8cd.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240210%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240210T095913Z&X-Amz-Expires=300&X-Amz-Signature=1ae078e760186984f366e7f7cdc8f7684316a6a50f42a9c6aa3f855b7a34e16e&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/303828514-2350f461-0f4a-4eea-bb37-84078252b8cd.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240210%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240210T103208Z&X-Amz-Expires=300&X-Amz-Signature=ad36e097dab1313849d1af4b507961fbcb047f1d177bf97baffb33c4fed46cf7&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
 
 You can display notifications on the same page without reloading, or you can redirect to some other page and display notifications on that page.
 
