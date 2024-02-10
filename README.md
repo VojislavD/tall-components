@@ -6,7 +6,7 @@ Include:
 
 - [x] [Modal](#modal)
 - [ ] Confirmation modal
-- [x] [Notification][#notification]
+- [x] [Notification](#notification)
 - [ ] Table (search, filters, sort columns)
 - [ ] Loading spinner
 - [ ] Drag & drop file upload (Filepond)
