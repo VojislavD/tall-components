@@ -53,9 +53,16 @@ class TestCase extends \Orchestra\Testbench\TestCase
      */
     private function cleanState()
     {
-        if (file_exists(resource_path('/views/components/tc-modal.blade.php'))) {
-            unlink(resource_path('/views/components/tc-modal.blade.php'));
-            rmdir(resource_path('/views/components/'));
+        if (
+            file_exists(resource_path('/views/vendor/tc/components/modal.blade.php')) ||
+            file_exists(resource_path('/views/vendor/tc/livewire/notification.blade.php'))
+        ) {
+            unlink(resource_path('/views/vendor/tc/components/modal.blade.php'));
+            unlink(resource_path('/views/vendor/tc/livewire/notification.blade.php'));
+            rmdir(resource_path('/views/vendor/tc/components'));
+            rmdir(resource_path('/views/vendor/tc/livewire'));
+            rmdir(resource_path('/views/vendor/tc'));
+            rmdir(resource_path('/views/vendor'));
         }
     }
 }
