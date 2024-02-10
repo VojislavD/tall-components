@@ -6,7 +6,7 @@ Include:
 
 - [x] [Modal](#modal)
 - [ ] Confirmation modal
-- [ ] Notification
+- [x] Notification
 - [ ] Table (search, filters, sort columns)
 - [ ] Loading spinner
 - [ ] Drag & drop file upload (Filepond)
@@ -147,6 +147,78 @@ You can add action buttons to the bottom of the modal like this:
     </x-slot::action>
 </x-tc-modal>
 ```
+
+### Notification
+
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/303828514-2350f461-0f4a-4eea-bb37-84078252b8cd.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240210%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240210T095913Z&X-Amz-Expires=300&X-Amz-Signature=1ae078e760186984f366e7f7cdc8f7684316a6a50f42a9c6aa3f855b7a34e16e&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+
+You can display notifications on the same page without reloading, or you can redirect to some other page and display notifications on that page.
+
+To use notifications, the recommended way is to add them to your layout file, so notifications will be available on all pages.
+
+You should add this Livewire component at the end of the file, before `@livewireScripts`.
+
+```blade
+@livewire('tc-notification)
+
+// or
+
+<livewire:tc-notification>
+```
+
+If you want to display notifications from a Livewire component without reloading the page, all you need to do is dispatch `notification` event with the message you want to display, like this:
+
+```php
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+
+class MyComponent extends Component
+{
+    public function someAction()
+    {
+        // do something
+
+        $this->dispatch('notification', 'Message to display in notification');
+    }
+}
+```
+
+If you want to redirect to some other page and display a notification there, you can do it like this:
+
+```php
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+
+class MyComponent extends Component
+{
+    public function someAction()
+    {
+        // do something
+
+        return to_route('some-route-name')
+            ->with('notification', 'Message to display in notification');
+    }
+}
+```
+
+Notification will disappear by default after 5 seconds (5000 ms). To change that, you need to pass the duration parameter to the component. Duration is represented in milliseconds.
+
+For example, to change the notification to disappear after 3 seconds, you can do it like this:
+
+```blade
+@livewire('tc-notification, ['duration' => 3000])
+
+// or
+
+<livewire:tc-notification :duration="3000">
+```
+
 ## Testing
 Run tests with:
 
