@@ -20,7 +20,6 @@ class TallComponentsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'tc');
 
         $this->configureComponents();
@@ -28,7 +27,6 @@ class TallComponentsServiceProvider extends ServiceProvider
         $this->configureLivewireComponents();
 
         $this->configurePublishing();
-
     }
 
     protected function configureComponents(): void
@@ -55,9 +53,10 @@ class TallComponentsServiceProvider extends ServiceProvider
     protected function configurePublishing(): void
     {
         if ($this->app->runningInConsole()) {
-            // Publish Modal
+            // Publish Views
             $this->publishes([
                 __DIR__.'/../resources/views/components/modal.blade.php' => resource_path('views/vendor/tc/components/modal.blade.php'),
+                __DIR__.'/../resources/views/livewire/notification.blade.php' => resource_path('views/vendor/tc/livewire/notification.blade.php'),
             ], 'tall-components-views');
 
             // Clear view cache for the package
