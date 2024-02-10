@@ -57,14 +57,8 @@ class TallComponentsServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publish Modal
             $this->publishes([
-                __DIR__.'/../resources/views/components/modal.blade.php' => resource_path('views/components/tc-modal.blade.php'),
-            ], 'tall-components-modal');
-
-            // Publish notification
-            $this->publishes([
-                __DIR__.'/../stubs/resources/views/livewire/tc-notification.blade.php' => resource_path('views/livewire/tc-notification.blade.php'),
-                __DIR__.'/../stubs/app/Livewire/TcNotification.php' => app_path('Livewire/TcNotification.php'),
-            ], 'tall-components-notification');
+                __DIR__.'/../resources/views/components/modal.blade.php' => resource_path('views/vendor/tc/components/modal.blade.php'),
+            ], 'tall-components-views');
 
             // Clear view cache for the package
             Artisan::call('view:clear');
