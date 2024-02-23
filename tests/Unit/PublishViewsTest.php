@@ -78,4 +78,40 @@ class PublishViewsTest extends TestCase
             file_get_contents(resource_path('views/vendor/tc/livewire/notification.blade.php'))
         );
     }
+
+    /** @test */
+    public function test_publish_loading_spinner_view_when_not_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/loading-spinner.blade.php')));
+        
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/loading-spinner.blade.php')));
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/loading-spinner.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/loading-spinner.blade.php'))
+        );
+    }
+
+    /** @test */
+    public function test_publish_loading_spinner_view_when_already_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/loading-spinner.blade.php')));
+        
+        File::put(resource_path('views/vendor/tc/components/').'loading-spinner.blade.php', 'Views test');
+
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/loading-spinner.blade.php')));
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/loading-spinner.blade.php'))
+        );
+    }
 }

@@ -55,9 +55,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         if (
             file_exists(resource_path('/views/vendor/tc/components/modal.blade.php')) ||
+            file_exists(resource_path('/views/vendor/tc/components/loading-spinner.blade.php')) ||
             file_exists(resource_path('/views/vendor/tc/livewire/notification.blade.php'))
         ) {
             unlink(resource_path('/views/vendor/tc/components/modal.blade.php'));
+            unlink(resource_path('/views/vendor/tc/components/loading-spinner.blade.php'));
             unlink(resource_path('/views/vendor/tc/livewire/notification.blade.php'));
             rmdir(resource_path('/views/vendor/tc/components'));
             rmdir(resource_path('/views/vendor/tc/livewire'));
