@@ -5,7 +5,7 @@ Library of useful UI components created for TALL (Tailwind CSS, Alpine.js, Larav
 Include:
 
 - [x] [Modal](#modal)
-- [ ] Confirmation modal
+- [x] [Confirmation modal](#confirmation-modal)
 - [x] [Notification](#notification)
 - [ ] Table (search, filters, sort columns)
 - [x] [Loading spinner](#loading-spinner)
@@ -147,6 +147,50 @@ You can add action buttons to the bottom of the modal like this:
     </x-slot::action>
 </x-tc-modal>
 ```
+
+### Confirmation modal
+
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/307432748-21b2a56a-ea47-46c8-84b7-7a572bc60e67.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240223%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240223T193650Z&X-Amz-Expires=300&X-Amz-Signature=b83c341cf492fefbea709a4a1d937cd2b13e30337c45e6571cc8e0bcbf1cbd90&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+
+To use the confirmation modal, you need to add the `x-tc-confirmation-modal` component and the `WithTcConfirmation` trait to the Livewire component where you want to use it.
+
+```php
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+use TallComponents\Livewire\Traits\WithTcConfirmation;
+
+class MyComponent extends Component
+{
+    use WithTcConfirmation;
+}
+```
+```blade
+<x-tc-confirmation-modal />
+```
+
+Then, to require confirmation for some action, you should add `x-tc-confirm` to the button from which you want to trigger the confirmation modal and pass `title`, `message`, and `action`.
+
+`action` should be a Livewire method you want to call after the user clicks the "Confirm" button in the modal.
+
+```blade
+<button 
+    type="button" 
+    x-tc-confirm="{ 
+        title: 'Delete user', 
+        message: 'Are you sure you want to delete this user?', 
+        action: 'deleteUser' 
+    }
+>
+    Delete user
+</button>
+```
+
+While the `title` parameter is optional, `message` and `action` are required, and the component will not work without them.
+
+If you want to use the confirmation modal with multiple actions on the same Livewire component, it's enough to add it only once. Alternatively, if you want to have it on all pages, you can include it in your layout file. Just make sure you have the `WithTcConfirmation` trait in your Livewire component.
 
 ### Notification
 
