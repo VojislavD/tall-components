@@ -33,6 +33,7 @@ class TallComponentsServiceProvider extends ServiceProvider
     {
 		$this->callAfterResolving(BladeCompiler::class, function () {
 			$this->registerComponent('modal');
+			$this->registerComponent('confirmation-modal');
 			$this->registerComponent('loading-spinner');
 		});
 	}
@@ -57,6 +58,7 @@ class TallComponentsServiceProvider extends ServiceProvider
             // Publish Views
             $this->publishes([
                 __DIR__.'/../resources/views/components/modal.blade.php' => resource_path('views/vendor/tc/components/modal.blade.php'),
+                __DIR__.'/../resources/views/components/confirmation-modal.blade.php' => resource_path('views/vendor/tc/components/confirmation-modal.blade.php'),
                 __DIR__.'/../resources/views/components/loading-spinner.blade.php' => resource_path('views/vendor/tc/components/loading-spinner.blade.php'),
                 __DIR__.'/../resources/views/livewire/notification.blade.php' => resource_path('views/vendor/tc/livewire/notification.blade.php'),
             ], 'tall-components-views');
