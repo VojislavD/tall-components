@@ -8,7 +8,7 @@ Include:
 - [ ] Confirmation modal
 - [x] [Notification](#notification)
 - [ ] Table (search, filters, sort columns)
-- [ ] Loading spinner
+- [x] [Loading spinner](#loading-spinner)
 - [ ] Drag & drop file upload (Filepond)
 - [ ] Markdown editor (Quill)
 - [ ] Datetime picker (Flatpickr)
@@ -218,6 +218,42 @@ For example, to change the notification to disappear after 3 seconds, you can do
 
 <livewire:tc-notification :duration="3000">
 ```
+
+### Loading spinner
+
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/307294583-679ee54f-5524-4a03-b522-a99b6038b99d.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240223%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240223T103953Z&X-Amz-Expires=300&X-Amz-Signature=49cdb8b68d482b0221635b136c05b3358735cbaf5796a95232b7b350bdf08984&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+
+Add `<x-tc-loading-spinner />` to your blade and add a `target` attribute that should match the Livewire action you want to use the spinner for.
+
+```blade
+<x-tc-loading-spinner target="someAction" />
+```
+
+```php
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+
+class MyComponent extends Component
+{
+    public function someAction()
+    {
+        // Display spinner while this method executing
+    }
+}
+```
+
+If you want to change the style of the spinner, you can add a `class` with the changes you want to implement.
+
+For example, you can change the size of the spinner like this:
+
+```blade
+<x-tc-loading-spinner target="someAction" class="!w-10 !h-10" />
+```
+
+Or if you want to make some other changes, you can publish the view file and do it there.
 
 ## Testing
 Run tests with:

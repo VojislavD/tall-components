@@ -1,5 +1,7 @@
+@props(['target' => ''])
+
 <svg
-    {{ $attributes->merge(['class' => 'animate-spin h-6 w-6 text-primary', 'wire' => 'target']) }}
+    {{ $attributes->merge(['class' => 'animate-spin h-6 w-6 text-primary', 'wire:target' => $target]) }}
     wire:loading
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
