@@ -149,4 +149,115 @@ class PublishViewsTest extends TestCase
             file_get_contents(resource_path('views/vendor/tc/components/loading-spinner.blade.php'))
         );
     }
+
+    /** @test */
+    public function test_publish_table_view_when_not_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/per-page.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/switcher.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/table.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/td.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/th.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/tr.blade.php')));
+        
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/per-page.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/switcher.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/table.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/td.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/th.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/tr.blade.php')));
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/per-page.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/per-page.blade.php'))
+        );
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/switcher.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/switcher.blade.php'))
+        );
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/table.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/table.blade.php'))
+        );
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/td.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/td.blade.php'))
+        );
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/th.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/th.blade.php'))
+        );
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/tr.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/tr.blade.php'))
+        );
+    }
+
+    /** @test */
+    public function test_publish_table_view_when_already_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/per-page.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/switcher.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/table.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/td.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/th.blade.php')));
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/tr.blade.php')));
+        
+        File::put(resource_path('views/vendor/tc/components/').'per-page.blade.php', 'Views test');
+        File::put(resource_path('views/vendor/tc/components/').'switcher.blade.php', 'Views test');
+        File::put(resource_path('views/vendor/tc/components/').'table.blade.php', 'Views test');
+        File::put(resource_path('views/vendor/tc/components/').'td.blade.php', 'Views test');
+        File::put(resource_path('views/vendor/tc/components/').'th.blade.php', 'Views test');
+        File::put(resource_path('views/vendor/tc/components/').'tr.blade.php', 'Views test');
+
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/per-page.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/switcher.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/table.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/td.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/th.blade.php')));
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/tr.blade.php')));
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/per-page.blade.php'))
+        );
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/switcher.blade.php'))
+        );
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/table.blade.php'))
+        );
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/td.blade.php'))
+        );
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/th.blade.php'))
+        );
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/tr.blade.php'))
+        );
+    }
 }
