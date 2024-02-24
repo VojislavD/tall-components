@@ -12,6 +12,10 @@ trait WithTcTable
 
     public int $tcPerPage = 15;
 
+    public string $tcSortable = '';
+
+    public string $tcSortDirection = 'asc';
+
     public function updatedTcSearch(): void
     {
         $this->resetPage();
@@ -19,6 +23,18 @@ trait WithTcTable
 
     public function updatedTcPerPage(): void
     {
+        $this->resetPage();
+    }
+
+    public function changeSorting(string $column): void
+    {
+        if ($this->tcSortable === $column) {
+            $this->tcSortDirection = $this->tcSortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            $this->tcSortable = $column;
+            $this->tcSortDirection = 'asc';
+        }
+
         $this->resetPage();
     }
 }
