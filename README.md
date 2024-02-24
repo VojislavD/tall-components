@@ -7,7 +7,7 @@ Include:
 - [x] [Modal](#modal)
 - [x] [Confirmation modal](#confirmation-modal)
 - [x] [Notification](#notification)
-- [ ] Table (search, filters, sort columns)
+- [x] [Table (search, filters, sort columns)](#table)
 - [x] [Loading spinner](#loading-spinner)
 - [ ] Drag & drop file upload (Filepond)
 - [ ] Markdown editor (Quill)
@@ -262,6 +262,166 @@ For example, to change the notification to disappear after 3 seconds, you can do
 
 <livewire:tc-notification :duration="3000">
 ```
+
+### Table
+
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/307553481-cd21edaa-641c-4e72-8e1f-e30a8176c68f.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240224T215331Z&X-Amz-Expires=300&X-Amz-Signature=78f6e9bed40c77b1f87a3f2b34187841d67b90efbf9cc741c7b7f4af1e774560&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+
+You can use a table in the blade file of your Livewire component like this:
+
+```blade
+<x-tc-table>
+    <x-slot:search></x-slot:search>
+
+    <x-slot:filters>
+        <x-tc-switcher wire:model.live="onlyActive" label="Only active" />
+    </x-slot:filters>
+
+    <x-slot:per-page>
+        <x-tc-per-page :options="[5, 15, 30]" />
+    </x-slot:per-page>
+
+    <x-slot:heading>
+        <x-tc-th sortable="name">
+            Name
+        </x-tc-th>
+        <x-tc-th sortable="email">
+            Email
+        </x-tc-th>
+        <x-tc-th>
+            Status
+        </x-tc-th>
+        <x-tc-th>
+            Created at
+        </x-tc-th>
+    </x-slot:heading>
+
+    @forelse($this->users as $user)
+        <x-tc-tr href="{{ route('users.show', $user) }}" :index="$loop->index">
+            <x-tc-td>
+                {{ $user->name }}
+            </x-tc-td>
+            <x-tc-td>
+                {{ $user->email }}
+            </x-tc-td>
+            <x-tc-td>
+                {{ $user->status }}
+            </x-tc-td>
+            <x-tc-td>
+                {{ $user->created_at->format('d.m.Y H:i') }}
+            </x-tc-td>
+        </x-tc-tr>
+    @empty
+        <x-tc-tr>
+            <x-tc-td colspan="4">
+                There is no results
+            </x-tc-td>
+        </x-tc-tr>
+    @endforelse 
+
+    <x-slot:pagination>
+        {{ $this->users->links() }}
+    </x-slot:pagination>
+</x-tc-table>
+```
+
+And in Livewire component, you need to add the `WithTcTable` trait. When you are getting rows for the table (such as `$this->users` in this example), you can use filters like this:
+
+```php
+<?php
+
+namespace App\Livewire;
+
+use App\Models\User;
+use Livewire\Attributes\Computed;
+use Livewire\Component;
+use TallComponents\Livewire\Traits\WithTcTable;
+
+class MyComponent extends Component
+{
+    use WithTcTable;
+
+    public bool $onlyActive = false;
+
+    #[Computed]
+    public function users(): LengthAwarePaginator|Model
+    {
+        return User::query()
+            ->when($this->tcSearch, function ($query) {
+                $query->where('name', 'LIKE', '%' . $this->tcSearch . '%');
+            })
+            ->when($this->onlyActive, function ($query) {
+                $query->where('is_active', true);
+            })
+            ->when($this->tcSortable === 'name', function ($query) {
+                $query->orderBy('name', $this->tcSortDirection);
+            })
+            ->when($this->tcSortable === 'email', function ($query) {
+                $query->orderBy('email', $this->tcSortDirection);
+            })
+            ->paginate($this->tcPerPage);
+    }
+}
+```
+#### Clickable rows
+It is possible to allow rows to be clickable by adding the `href` attribute to the `x-tc-tr` component and passing the value where you want to be redirected.
+
+For example, to redirect to the user profile page with the route name `users.show`, you can do it like this:
+
+```blade
+<x-tc-tr :href="route('users.show', $user)" :index="$loop->index">
+```
+
+#### Search filter
+Search filter is optional; if you don't need it, you can leave out `<x-slot:search></x-slot:search>`. In that case, there will be no input for searching the table.
+
+The value of the search input is stored in the `tcSearch` variable. So, to filter the table based on the value from that field, you need to use `$this->tcSearch`.
+
+#### Custom filters
+You can add any custom filter you want (In the case above, it's the `Only active` filter). You can pass any toggle, checkbox, or select input inside the `<x-slot:filters>` slot.
+
+#### Per page filter
+Per page filter is optional; if you don't need it, you can leave out `<x-slot:per-page>`.
+
+
+The value of per page is stored in the `tcPerPage` variable, and it is `15` by default. To use it, you need to pass `$this->tcPerPage` to your `paginate` method, like this:
+
+```php
+...
+->paginate($this->tcPerPage);
+```
+
+You can customize the number of rows users can choose by passing values as the `options` attribute to the `x-tc-per-page` component. For example, if you want to allow users to choose between `15`, `30`, and `50`, you can do it like this:
+
+```blade
+<x-slot:per-page>
+    <x-tc-per-page :options="[15, 30, 50]" />
+</x-slot:per-page>
+```
+
+#### Sort by columns
+You can allow sorting by any column in the table by adding `sortable` to the `<x-tc-th>` component and by passing the key for sorting, which you will use in Livewire components.
+
+For example, if you want to allow sorting by user name, you can do it like this:
+
+```blade
+<x-tc-th sortable="name">
+    Name
+</x-tc-th>
+```
+
+And then you can sort results based on name like this:"
+
+```php
+...
+->when($this->tcSortable === 'name', function ($query) {
+    $query->orderBy('name', $this->tcSortDirection);
+})
+```
+Name of the sortable column is stored in `tcSortable`, and direction is stored in the `tcSortDirection` variable. Direction will be `asc` by default and will switch between `asc` and `desc` on every click.
+
+#### Pagination
+Pagination is optional; if you don't need it, you can leave out `<x-slot:pagination></x-slot:pagination>`.
 
 ### Loading spinner
 
