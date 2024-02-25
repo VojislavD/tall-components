@@ -54,7 +54,7 @@ To change colors, just find `primary`, `primary-dark`, `secondary` or `secondary
 
 ### Modal
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/303588933-619c5c08-2a43-4653-a1d4-a375b2a93e09.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240209%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240209T080440Z&X-Amz-Expires=300&X-Amz-Signature=8c87a030ec72677e1d80de2be5d8367c06c6738aa2b28b1fbd45cf123dee0511&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+<img src="docs/img/modal-demo.gif">
 
 To use modal, you need have boolean variable inside your Livewire component. Modal will be opened or closed based on the value of that variable.
 
@@ -150,7 +150,7 @@ You can add action buttons to the bottom of the modal like this:
 
 ### Confirmation modal
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/307432748-21b2a56a-ea47-46c8-84b7-7a572bc60e67.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240223%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240223T193650Z&X-Amz-Expires=300&X-Amz-Signature=b83c341cf492fefbea709a4a1d937cd2b13e30337c45e6571cc8e0bcbf1cbd90&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+<img src="docs/img/confirmation-modal-demo.gif">
 
 To use the confirmation modal, you need to add the `x-tc-confirmation-modal` component and the `WithTcConfirmation` trait to the Livewire component where you want to use it.
 
@@ -194,7 +194,7 @@ If you want to use the confirmation modal with multiple actions on the same Live
 
 ### Notification
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/303828514-2350f461-0f4a-4eea-bb37-84078252b8cd.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240210%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240210T103208Z&X-Amz-Expires=300&X-Amz-Signature=ad36e097dab1313849d1af4b507961fbcb047f1d177bf97baffb33c4fed46cf7&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+<img src="docs/img/notification-demo.gif">
 
 You can display notifications on the same page without reloading, or you can redirect to some other page and display notifications on that page.
 
@@ -265,7 +265,7 @@ For example, to change the notification to disappear after 3 seconds, you can do
 
 ### Table
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/307553481-cd21edaa-641c-4e72-8e1f-e30a8176c68f.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240224%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240224T215331Z&X-Amz-Expires=300&X-Amz-Signature=78f6e9bed40c77b1f87a3f2b34187841d67b90efbf9cc741c7b7f4af1e774560&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+<img src="docs/img/table-demo.gif">
 
 You can use a table in the blade file of your Livewire component like this:
 
@@ -425,7 +425,7 @@ Pagination is optional; if you don't need it, you can leave out `<x-slot:paginat
 
 ### Loading spinner
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/23532087/307294583-679ee54f-5524-4a03-b522-a99b6038b99d.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240223%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240223T103953Z&X-Amz-Expires=300&X-Amz-Signature=49cdb8b68d482b0221635b136c05b3358735cbaf5796a95232b7b350bdf08984&X-Amz-SignedHeaders=host&actor_id=23532087&key_id=0&repo_id=748995892">
+<img src="docs/img/loading-spinner-demo.gif">
 
 Add `<x-tc-loading-spinner />` to your blade and add a `target` attribute that should match the Livewire action you want to use the spinner for.
 
