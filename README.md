@@ -410,7 +410,7 @@ For example, if you want to allow sorting by user name, you can do it like this:
 </x-tc-th>
 ```
 
-And then you can sort results based on name like this:"
+And then you can sort results based on name like this:
 
 ```php
 ...
