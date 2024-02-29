@@ -260,4 +260,40 @@ class PublishViewsTest extends TestCase
             file_get_contents(resource_path('views/vendor/tc/components/tr.blade.php'))
         );
     }
+
+    /** @test */
+    public function test_publish_filepond_view_when_not_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/filepond.blade.php')));
+        
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/filepond.blade.php')));
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/filepond.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/filepond.blade.php'))
+        );
+    }
+
+    /** @test */
+    public function test_publish_filepond_view_when_already_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/filepond.blade.php')));
+        
+        File::put(resource_path('views/vendor/tc/components/').'filepond.blade.php', 'Views test');
+
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/filepond.blade.php')));
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/filepond.blade.php'))
+        );
+    }
 }

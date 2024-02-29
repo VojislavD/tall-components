@@ -41,6 +41,7 @@ class TallComponentsServiceProvider extends ServiceProvider
 			$this->registerComponent('td');
 			$this->registerComponent('th');
 			$this->registerComponent('tr');
+			$this->registerComponent('filepond');
 		});
 	}
 
@@ -72,6 +73,7 @@ class TallComponentsServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views/components/td.blade.php' => resource_path('views/vendor/tc/components/td.blade.php'),
                 __DIR__.'/../resources/views/components/th.blade.php' => resource_path('views/vendor/tc/components/th.blade.php'),
                 __DIR__.'/../resources/views/components/tr.blade.php' => resource_path('views/vendor/tc/components/tr.blade.php'),
+                __DIR__.'/../resources/views/components/filepond.blade.php' => resource_path('views/vendor/tc/components/filepond.blade.php'),
                 __DIR__.'/../resources/views/livewire/notification.blade.php' => resource_path('views/vendor/tc/livewire/notification.blade.php'),
             ], 'tall-components-views');
 
