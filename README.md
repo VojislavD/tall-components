@@ -35,6 +35,11 @@ You can install the package via composer:
 composer require vojislavd/tall-components
 ```
 
+You need to include `tc.js` in your `resources/js/app.js` file:
+```js
+import './../../vendor/vojislavd/tall-components/resources/js/tc.js'
+```
+
 Next, you should compile assets:
 ```bash
 npm install && npm run build
