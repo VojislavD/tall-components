@@ -9,7 +9,7 @@ Include:
 - [x] [Notification](#notification)
 - [x] [Table (search, filters, sort columns)](#table)
 - [x] [Loading spinner](#loading-spinner)
-- [ ] Drag & drop file upload (Filepond)
+- [x] [Drag & drop file upload (Filepond)](#Drag-&-drop-file-upload-(Filepond))
 - [ ] Markdown editor (Quill)
 - [ ] Datetime picker (Flatpickr)
 - [ ] Show/hide password input
@@ -463,6 +463,69 @@ For example, you can change the size of the spinner like this:
 ```
 
 Or if you want to make some other changes, you can publish the view file and do it there.
+
+### Drag & drop file upload (Filepond)
+
+<img src="https://private-user-images.githubusercontent.com/23532087/309271344-3e9616e6-54ed-41da-83b9-c221b7f1609c.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyOTkxNTEsIm5iZiI6MTcwOTI5ODg1MSwicGF0aCI6Ii8yMzUzMjA4Ny8zMDkyNzEzNDQtM2U5NjE2ZTYtNTRlZC00MWRhLTgzYjktYzIyMWI3ZjE2MDljLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAxVDEzMTQxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM1MTA0OGRhMGJhNDIxOWQ2NTk2YmI2MjI5ODFhNDU4N2M0MGJkZDdmYmU3NmI3ODEyY2M1OGI4ODUwZTU1NGImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.SaTdWlzuv3_IOrkKD8Iz9Yzm6y8ZrZwJ2tGhX9HkuhA">
+
+To use a field for file uploading, you need to add `<x-tc-filepond>` to your blade and set `wire:model`.
+```blade
+<x-tc-filepond wire:model="state.file" />
+```
+
+When file is uploaded it will be standard Livewire temporary uploaded file (`Livewire\Features\SupportFileUploads\TemporaryUploadedFile`) and you can save it as any other file upload.
+
+If you want to call a Livewire action immediately after a file is uploaded, you can add `callOnUpload` to the component and pass the name of the Livewire method you want to be called. For example, to call the `saveFile` method after a file is uploaded:
+```blade
+<x-tc-filepond 
+    wire:model="state.file" 
+    callOnUpload="saveFile" 
+/>
+```
+
+You can reset Filepond field from Livewire by dispatching event that will match `resetKey` of component. For example:
+```blade
+<x-tc-filepond 
+    wire:model="state.file" 
+    callOnUpload="saveFile" 
+    resetKey="resetFileField" 
+/>
+```
+```php
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+
+class MyComponent extends Component
+{
+    public function saveFile()
+    {
+        // Save file
+
+        $this->dispatch('resetFileField');
+    }
+}
+```
+
+The component allows different configurations, with the following available properties:
+| PROPERTY                | DEFAULT VALUE | DESCRIPTION                                                                         |
+|-------------------------|---------------|-------------------------------------------------------------------------------------|
+| allowDrop               | `true`        | Enable or disable drag n' drop                                                      |
+| allowBrowse             | `true`        | Enable or disable file browser                                                      |
+| allowPaste              | `true`        | Enable or disable pasting of files. Pasting files is not supported on all browsers  |
+| allowMultiple           | `false`       | Enable or disable adding multiple files                                             |
+| allowFileSizeValidation | `true`        | Enable or disable file size validation                                              |
+| minFileSize             | `null`        | The minimum size of a file, for instance `5MB` or `750KB`                           |
+| maxFileSize             | `null`        | The maximum size of a file, for instance `5MB` or `750KB`                           |
+| allowFileTypeValidation | `true`        | Enable or disable file type validation                                              |
+| acceptedFileTypes       | `[]`          | Array of accepted file types. Can be mime types or wild cards. For instance ['image/*'] will accept all images. ['image/png', 'image/jpeg'] will only accepts PNGs and JPEGs. |
+| allowImagePreview       | `true`        | Enable or disable preview mode                                                      |
+| imagePreviewMinHeight   | `44`          | Minimum image preview height                                                        |
+| imagePreviewMaxHeight   | `256`         | Maximum image preview height                                                        |
+
+If you want to make other changes, you can publish views and edit the `filepond.blade.php` file.
 
 ## Testing
 Run tests with:

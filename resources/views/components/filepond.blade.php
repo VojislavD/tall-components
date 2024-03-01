@@ -21,7 +21,7 @@ $imagePreviewMaxHeight = $attributes->has('imagePreviewMaxHeight') ? $attributes
     x-cloak
     x-init="() => {
         const pond = FilePond.create($refs.input, { credits: false });
-        const callOnUploaded = {{ $attributes->has('callOnUploaded') ? $attributes->get('callOnUploaded') : '' }}
+        const callOnUpload = '{{ $attributes->has('callOnUpload') ? $attributes->get('callOnUpload') : '' }}'
     
         pond.setOptions({
             server: {
@@ -76,8 +76,8 @@ $imagePreviewMaxHeight = $attributes->has('imagePreviewMaxHeight') ? $attributes
         pond.credits = false;
     
         pond.on('processfile', (error, file) => {
-            if (callOnUploaded) {
-                $wire.call(callOnUploaded)
+            if (callOnUpload) {
+                $wire.call(callOnUpload)
             }
         });
     
