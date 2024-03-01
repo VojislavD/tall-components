@@ -4,8 +4,11 @@ import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+import Quill from 'quill';
+import 'quill/dist/quill.snow.css';
 
 window.FilePond = FilePond;
+window.Quill = Quill;
 
 FilePond.registerPlugin(FilePondPluginFileValidateSize);
 FilePond.registerPlugin(FilePondPluginFileValidateType);

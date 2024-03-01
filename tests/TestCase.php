@@ -64,6 +64,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
             file_exists(resource_path('/views/vendor/tc/components/th.blade.php')) || 
             file_exists(resource_path('/views/vendor/tc/components/tr.blade.php')) ||
             file_exists(resource_path('/views/vendor/tc/components/filepond.blade.php')) ||
+            file_exists(resource_path('/views/vendor/tc/components/quill-editor.blade.php')) ||
             file_exists(resource_path('/views/vendor/tc/livewire/notification.blade.php'))
         ) {
             unlink(resource_path('/views/vendor/tc/components/modal.blade.php'));
@@ -76,6 +77,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
             unlink(resource_path('/views/vendor/tc/components/th.blade.php'));
             unlink(resource_path('/views/vendor/tc/components/tr.blade.php'));
             unlink(resource_path('/views/vendor/tc/components/filepond.blade.php'));
+            unlink(resource_path('/views/vendor/tc/components/quill-editor.blade.php'));
             unlink(resource_path('/views/vendor/tc/livewire/notification.blade.php'));
             rmdir(resource_path('/views/vendor/tc/components'));
             rmdir(resource_path('/views/vendor/tc/livewire'));
