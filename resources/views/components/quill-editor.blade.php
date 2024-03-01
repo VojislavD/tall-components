@@ -54,5 +54,5 @@ if ($attributes->has('toolbar')) {
 ">
     <div id="quill-editor">{{ $attributes->wire('model') }}</div>
 
-    <input type="text" id="quill-input" hidden {{ $attributes->wire('model') }}>
+    <input type="text" id="quill-input" hidden {{ $attributes->whereStartsWith('wire:model')->first() }}>
 </div>
