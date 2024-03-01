@@ -30,7 +30,7 @@ if ($attributes->has('toolbar')) {
 
 @endphp
 
-<div x-init="
+<div wire:ignore x-init="
     const quill = new Quill('#quill-editor', {
         theme: 'snow',
         placeholder: '{{ $placeholder }}',
