@@ -9,7 +9,7 @@ Include:
 - [x] [Notification](#notification)
 - [x] [Table (search, filters, sort columns)](#table)
 - [x] [Loading spinner](#loading-spinner)
-- [x] [Drag & drop file upload (Filepond)](#Drag-&-drop-file-upload-(Filepond))
+- [x] [Drag & drop file upload (Filepond)](#drag--drop-file-upload-filepond)
 - [ ] Markdown editor (Quill)
 - [ ] Datetime picker (Flatpickr)
 - [ ] Show/hide password input
