@@ -43,6 +43,7 @@ class TallComponentsServiceProvider extends ServiceProvider
 			$this->registerComponent('tr');
 			$this->registerComponent('filepond');
 			$this->registerComponent('quill-editor');
+			$this->registerComponent('datetime-picker');
 		});
 	}
 
@@ -76,6 +77,7 @@ class TallComponentsServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views/components/tr.blade.php' => resource_path('views/vendor/tc/components/tr.blade.php'),
                 __DIR__.'/../resources/views/components/filepond.blade.php' => resource_path('views/vendor/tc/components/filepond.blade.php'),
                 __DIR__.'/../resources/views/components/quill-editor.blade.php' => resource_path('views/vendor/tc/components/quill-editor.blade.php'),
+                __DIR__.'/../resources/views/components/datetime-picker.blade.php' => resource_path('views/vendor/tc/components/datetime-picker.blade.php'),
                 __DIR__.'/../resources/views/livewire/notification.blade.php' => resource_path('views/vendor/tc/livewire/notification.blade.php'),
             ], 'tall-components-views');
 

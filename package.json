@@ -4,6 +4,7 @@
     "filepond-plugin-file-validate-size": "^2.2.8",
     "filepond-plugin-file-validate-type": "^1.2.9",
     "filepond-plugin-image-preview": "^4.6.12",
+    "flatpickr": "^4.6.13",
     "quill": "^2.0.0-rc.2"
   }
 }

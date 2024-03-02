@@ -6,9 +6,12 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
+import flatpickr from "flatpickr";
+import 'flatpickr/dist/flatpickr.css';
 
 window.FilePond = FilePond;
 window.Quill = Quill;
+window.Flatpickr = flatpickr;
 
 FilePond.registerPlugin(FilePondPluginFileValidateSize);
 FilePond.registerPlugin(FilePondPluginFileValidateType);

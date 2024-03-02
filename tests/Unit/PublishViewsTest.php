@@ -332,4 +332,40 @@ class PublishViewsTest extends TestCase
             file_get_contents(resource_path('views/vendor/tc/components/quill-editor.blade.php'))
         );
     }
+
+    /** @test */
+    public function test_publish_datetime_picker_view_when_not_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/datetime-picker.blade.php')));
+        
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/datetime-picker.blade.php')));
+
+        $this->assertEquals(
+            file_get_contents(__DIR__.'/../../resources/views/components/datetime-picker.blade.php'),
+            file_get_contents(resource_path('views/vendor/tc/components/datetime-picker.blade.php'))
+        );
+    }
+
+    /** @test */
+    public function test_publish_datetime_picker_view_when_already_exists()
+    {
+        mkdir(resource_path('views/vendor/tc/components'), 0777, true);
+
+        $this->assertFalse(file_exists(resource_path('views/vendor/tc/components/datetime-picker.blade.php')));
+        
+        File::put(resource_path('views/vendor/tc/components/').'datetime-picker.blade.php', 'Views test');
+
+        $this->artisan('vendor:publish --tag="tall-components-views"');
+
+        $this->assertTrue(file_exists(resource_path('views/vendor/tc/components/datetime-picker.blade.php')));
+
+        $this->assertEquals(
+            'Views test',
+            file_get_contents(resource_path('views/vendor/tc/components/datetime-picker.blade.php'))
+        );
+    }
 }
