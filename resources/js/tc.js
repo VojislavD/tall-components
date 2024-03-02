@@ -1,3 +1,4 @@
+import './../css/tc.css';
 import * as FilePond from 'filepond';
 import 'filepond/dist/filepond.min.css';
 import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';

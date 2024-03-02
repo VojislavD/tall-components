@@ -52,7 +52,7 @@ if ($attributes->has('toolbar')) {
 
     $nextTick(() => { quill.root.innerHTML = input.value });
 ">
-    <div id="quill-editor" style="min-height: 100px">{{ $attributes->wire('model') }}</div>
+    <div id="quill-editor">{{ $attributes->wire('model') }}</div>
 
     <input type="text" id="quill-input" hidden {{ $attributes->wire('model') }}>
 </div>
