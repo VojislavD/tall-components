@@ -10,10 +10,8 @@ Include:
 - [x] [Table (search, filters, sort columns)](#table)
 - [x] [Loading spinner](#loading-spinner)
 - [x] [Drag & drop file upload (Filepond)](#drag--drop-file-upload-filepond)
-- [ ] Markdown editor (Quill)
+- [x] [Markdown editor (Quill)](#markdown-editor-quill)
 - [ ] Datetime picker (Flatpickr)
-- [ ] Show/hide password input
-- [ ] Auto generate slug
 
 ## Requirements
 
@@ -526,6 +524,63 @@ The component allows different configurations, with the following available prop
 | imagePreviewMaxHeight   | `256`         | Maximum image preview height                                                        |
 
 If you want to make other changes, you can publish views and edit the `filepond.blade.php` file.
+
+### Markdown editor (Quill)
+
+<img src="https://private-user-images.githubusercontent.com/23532087/309458473-17e82f5e-aed1-431b-9fc7-388226292847.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkzNjYyNDIsIm5iZiI6MTcwOTM2NTk0MiwicGF0aCI6Ii8yMzUzMjA4Ny8zMDk0NTg0NzMtMTdlODJmNWUtYWVkMS00MzFiLTlmYzctMzg4MjI2MjkyODQ3LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAyVDA3NTIyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZkNDUxODUzYzdmYzAxN2NhMDA4YzZmNmExNzBhMTRiMDRlNGU5ZjY3ZTBhMDYzMjViNTEyNjBkOGJiODZhYzkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.pdHbY-l5fEMHrKK_cT3fpkKKWWV82YtW0PB3Y1EG440">
+
+To use a Quill text editor, you need to add `<x-tc-quill-editor>` to your blade and set `wire:model` (it's not possible to use `live` or `blur`).
+```blade
+<x-tc-quill-editor wire:model="state.text" />
+```
+
+You can add placeholder text by passing the `placeholder` attribute to the component.
+```blade
+<x-tc-quill-editor 
+    wire:model="state.text" 
+    placeholder="Write some text here..."
+/>
+```
+
+It's possible to make the editor read-only; just pass the `readOnly` attribute and set it to be true.
+```blade
+<x-tc-quill-editor 
+    wire:model="state.text" 
+    readOnly="true"
+/>
+```
+
+Editor will include all editing options in the toolbar by default. You can configure it by passing the `toolbar` attribute to the component with the editing options you want to use. For example, if you want to have only the `bold`, `italic`, and `underline` options:
+```blade
+<x-tc-quill-editor 
+    wire:model="state.text" 
+    toolbar="['bold', 'italic', 'underline']"
+/>
+```
+
+Editor's default toolbar:
+```
+['bold', 'italic', 'underline', 'strike'],
+['blockquote', 'code-block'],
+['link', 'formula'],
+
+[{ 'header': 1 }, { 'header': 2 }], 
+[{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
+[{ 'script': 'sub'}, { 'script': 'super' }],
+[{ 'indent': '-1'}, { 'indent': '+1' }],
+[{ 'direction': 'rtl' }],
+
+[{ 'size': ['small', false, 'large', 'huge'] }],
+[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+[{ 'color': [] }, { 'background': [] }],
+[{ 'font': [] }],
+[{ 'align': [] }],
+
+['clean']
+```
+
+If you want to change the theme of the editor or make any other modifications, you can publish views and edit the `quill-editor.blade.php` file.
 
 ## Testing
 Run tests with:
