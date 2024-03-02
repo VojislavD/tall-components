@@ -11,7 +11,7 @@ Include:
 - [x] [Loading spinner](#loading-spinner)
 - [x] [Drag & drop file upload (Filepond)](#drag--drop-file-upload-filepond)
 - [x] [Markdown editor (Quill)](#markdown-editor-quill)
-- [ ] Datetime picker (Flatpickr)
+- [x] [Datetime picker (Flatpickr)](#datetime-picker-flatpickr)
 
 ## Requirements
 
@@ -527,7 +527,7 @@ If you want to make other changes, you can publish views and edit the `filepond.
 
 ### Markdown editor (Quill)
 
-<img src="https://private-user-images.githubusercontent.com/23532087/309458473-17e82f5e-aed1-431b-9fc7-388226292847.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkzNjYyNDIsIm5iZiI6MTcwOTM2NTk0MiwicGF0aCI6Ii8yMzUzMjA4Ny8zMDk0NTg0NzMtMTdlODJmNWUtYWVkMS00MzFiLTlmYzctMzg4MjI2MjkyODQ3LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAyVDA3NTIyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZkNDUxODUzYzdmYzAxN2NhMDA4YzZmNmExNzBhMTRiMDRlNGU5ZjY3ZTBhMDYzMjViNTEyNjBkOGJiODZhYzkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.pdHbY-l5fEMHrKK_cT3fpkKKWWV82YtW0PB3Y1EG440">
+<img src="https://private-user-images.githubusercontent.com/23532087/309473465-4de3a416-2d01-4f3d-a41a-c2cb8b9f60c6.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkzODMyMzMsIm5iZiI6MTcwOTM4MjkzMywicGF0aCI6Ii8yMzUzMjA4Ny8zMDk0NzM0NjUtNGRlM2E0MTYtMmQwMS00ZjNkLWE0MWEtYzJjYjhiOWY2MGM2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAyVDEyMzUzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY5NDljOWQ5MGIxNTMwMjBjOTE5NWIzZmVkZmFiODkxNzkxNjM3ZTk2MGIwOThjNjUyOGQyZTNiNjBlYmNlNjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.RK-YhARLRIRcJRYytuR5wfhdsPuNJoaqRlAcoWZ3Ch8">
 
 To use a Quill text editor, you need to add `<x-tc-quill-editor>` to your blade and set `wire:model` (it's not possible to use `live` or `blur`).
 ```blade
@@ -581,6 +581,42 @@ Editor's default toolbar:
 ```
 
 If you want to change the theme of the editor or make any other modifications, you can publish views and edit the `quill-editor.blade.php` file.
+
+### Datetime picker (Flatpickr)
+
+<img src="https://private-user-images.githubusercontent.com/23532087/309473466-da64cac0-22fc-41c7-9bee-da2fe7b85255.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkzODMyMzMsIm5iZiI6MTcwOTM4MjkzMywicGF0aCI6Ii8yMzUzMjA4Ny8zMDk0NzM0NjYtZGE2NGNhYzAtMjJmYy00MWM3LTliZWUtZGEyZmU3Yjg1MjU1LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAyVDEyMzUzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE5YWJkYzUxOTU5MDRjYTJlYThlYzQyYTUwNDVkMGZjNjgwOTcwOGJkNjg4MTEzMzcxODJmNTVjODkxZjIyNzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-jTYX0XL859Cefd1D5zNs8vv2HRrJHlVA2vlyeTujwo">
+
+To use the datetime picker, you need to add `<x-tc-datetime-picker>` to your blade and set `wire:model`.
+
+```blade
+<x-tc-datetime-picker wire:model="state.datetime" />
+```
+
+To add a placeholder, just pass the `placeholder` attribute to components:
+```blade
+<x-tc-datetime-picker 
+    wire:model="state.datetime" 
+    placeholder="Select datetime..." 
+/>
+```
+
+The component allows for different configurations; you can pass attributes to the component to change its configuration.
+
+Available properties:
+| PROPERTY     | TYPE        | DEFAULT VALUE | EXAMPLE VALUE                    |
+|--------------|-------------|---------------|----------------------------------|
+| dateFormat   | String      | `Y-m-d`       | `d.m.Y`                          |
+| minDate      | String/Date | `null`        | `2024-03-01`                     |
+| maxDate      | String/Date | `null`        | `2024-03-10`                     |
+| defaultDate  | String      | `null`        | `2024-03-02`                     |
+| enableTime   | Boolean     | `false`       | `true`                           |
+| time_24hr    | Boolean     | `false`       | `true`                           |
+| minTime      | String      | `null`        | `09:00`                          |
+| maxTime      | String      | `null`        | `11:00`                          |
+| mode         | String      | `single`      | `single`, `multiple`, or `range` |
+| noCalendar   | Boolean     | `false`       | `true`                           |
+
+If you want to make additional changes, you can publish views and edit the `datetime-picker.blade.php` file.
 
 ## Testing
 Run tests with:
