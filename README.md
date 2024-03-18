@@ -57,7 +57,7 @@ To change colors, just find `primary`, `primary-dark`, `secondary` or `secondary
 
 ### Modal
 
-<img src="https://private-user-images.githubusercontent.com/23532087/308881249-288208fd-732f-4828-abd4-1d9a0a3e46d5.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyMDEzOTQsIm5iZiI6MTcwOTIwMTA5NCwicGF0aCI6Ii8yMzUzMjA4Ny8zMDg4ODEyNDktMjg4MjA4ZmQtNzMyZi00ODI4LWFiZDQtMWQ5YTBhM2U0NmQ1LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjI5VDEwMDQ1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdmNTA2MTNkMzM5NmNmY2NiOTUzNWU4ZjM0ZmZjYzlmYjUwZmNlZmYwMWQxMWRiMDI4YjExODdiMGNhOTM0Y2EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.kDqXYY6O2roS-V_0UDpFZKYHjs9GuWCgtA-lAwufa3I">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/fbbdfe85-957b-4ff0-82c5-8eaa6f99f109">
 
 To use modal, you need have boolean variable inside your Livewire component. Modal will be opened or closed based on the value of that variable.
 
@@ -153,7 +153,7 @@ You can add action buttons to the bottom of the modal like this:
 
 ### Confirmation modal
 
-<img src="https://private-user-images.githubusercontent.com/23532087/308881253-9255a8d6-672e-450b-86df-4bafb47e87bb.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyMDEzOTQsIm5iZiI6MTcwOTIwMTA5NCwicGF0aCI6Ii8yMzUzMjA4Ny8zMDg4ODEyNTMtOTI1NWE4ZDYtNjcyZS00NTBiLTg2ZGYtNGJhZmI0N2U4N2JiLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjI5VDEwMDQ1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ1YTkyNjBmNDA4YTQ1ODlmZmUwY2EzNWU2M2Y3OGFkMmRhMzkyY2NiZGJkZTY2OWJlOGRjNzk2Mjc1NWUwNjUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.fI9dUoXd8awJWUjMEwavvKJu7eIZlyjpR3a_pgvWsjE">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/bb8a6edb-3c6a-45a8-a4cd-419f3445e261">
 
 To use the confirmation modal, you need to add the `x-tc-confirmation-modal` component and the `WithTcConfirmation` trait to the Livewire component where you want to use it.
 
@@ -197,7 +197,7 @@ If you want to use the confirmation modal with multiple actions on the same Live
 
 ### Notification
 
-<img src="https://private-user-images.githubusercontent.com/23532087/308881252-8d9b77cd-8c5d-452a-a641-14c5cd950938.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyMDEzOTQsIm5iZiI6MTcwOTIwMTA5NCwicGF0aCI6Ii8yMzUzMjA4Ny8zMDg4ODEyNTItOGQ5Yjc3Y2QtOGM1ZC00NTJhLWE2NDEtMTRjNWNkOTUwOTM4LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjI5VDEwMDQ1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdmZTk5MDlhZjE4Y2FjZDA5MTMwZmI0MDk1NDE1MDRhZGU4MTMzZjI2ZjRhNWJhMzRjMGVmY2ZhMGJkZjA1MWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.83YOsLDwqIKsHDHup44epEjP9chbivo7IF7Qml_nWtg">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/e5017036-4268-41d3-9417-84364c5297fa">
 
 You can display notifications on the same page without reloading, or you can redirect to some other page and display notifications on that page.
 
@@ -268,7 +268,7 @@ For example, to change the notification to disappear after 3 seconds, you can do
 
 ### Table
 
-<img src="https://private-user-images.githubusercontent.com/23532087/308881251-e8b5a309-d7f0-414c-989a-8726eda5db22.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyMDEzOTQsIm5iZiI6MTcwOTIwMTA5NCwicGF0aCI6Ii8yMzUzMjA4Ny8zMDg4ODEyNTEtZThiNWEzMDktZDdmMC00MTRjLTk4OWEtODcyNmVkYTVkYjIyLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjI5VDEwMDQ1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNlNDg1NmI4OWRjOGI5NzFjNGE0YjJlY2NjMDJkZTk1ZWM4MzIyMGFkNGU1N2E1OTAzNzc1ZDNhMWQyYzYzNTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.4cKTSq05mHt7BXKla0Ka_9nKuQz_ZpXsioRDG_tremE">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/4e3706dc-2e72-4b02-b639-93f842a08b7f">
 
 You can use a table in the blade file of your Livewire component like this:
 
@@ -428,7 +428,7 @@ Pagination is optional; if you don't need it, you can leave out `<x-slot:paginat
 
 ### Loading spinner
 
-<img src="https://private-user-images.githubusercontent.com/23532087/308881250-1fcda036-325a-4eb7-88d2-388814b72fec.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyMDEzOTQsIm5iZiI6MTcwOTIwMTA5NCwicGF0aCI6Ii8yMzUzMjA4Ny8zMDg4ODEyNTAtMWZjZGEwMzYtMzI1YS00ZWI3LTg4ZDItMzg4ODE0YjcyZmVjLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjI5VDEwMDQ1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5ZTllYjJkOWQ5YjNmOTcxMGUwODcyOGYzYmEwZWM2OTI5NDg5NDQ4MzI2NDA2YTUyZTk0NGM5ODBkZDQ0MjkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.ceObB3mecs1wIaoghodafNQpFgoG07h_J4abUFhLzCY">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/c22b1802-84ad-418e-8769-5d41cae417d2">
 
 Add `<x-tc-loading-spinner />` to your blade and add a `target` attribute that should match the Livewire action you want to use the spinner for.
 
@@ -464,7 +464,7 @@ Or if you want to make some other changes, you can publish the view file and do 
 
 ### Drag & drop file upload (Filepond)
 
-<img src="https://private-user-images.githubusercontent.com/23532087/309271344-3e9616e6-54ed-41da-83b9-c221b7f1609c.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkyOTkxNTEsIm5iZiI6MTcwOTI5ODg1MSwicGF0aCI6Ii8yMzUzMjA4Ny8zMDkyNzEzNDQtM2U5NjE2ZTYtNTRlZC00MWRhLTgzYjktYzIyMWI3ZjE2MDljLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAxVDEzMTQxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM1MTA0OGRhMGJhNDIxOWQ2NTk2YmI2MjI5ODFhNDU4N2M0MGJkZDdmYmU3NmI3ODEyY2M1OGI4ODUwZTU1NGImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.SaTdWlzuv3_IOrkKD8Iz9Yzm6y8ZrZwJ2tGhX9HkuhA">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/5322bba9-72e3-42a3-8f0c-53ab837cb3bf">
 
 To use a field for file uploading, you need to add `<x-tc-filepond>` to your blade and set `wire:model`.
 ```blade
@@ -527,7 +527,7 @@ If you want to make other changes, you can publish views and edit the `filepond.
 
 ### Markdown editor (Quill)
 
-<img src="https://private-user-images.githubusercontent.com/23532087/309473465-4de3a416-2d01-4f3d-a41a-c2cb8b9f60c6.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkzODMyMzMsIm5iZiI6MTcwOTM4MjkzMywicGF0aCI6Ii8yMzUzMjA4Ny8zMDk0NzM0NjUtNGRlM2E0MTYtMmQwMS00ZjNkLWE0MWEtYzJjYjhiOWY2MGM2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAyVDEyMzUzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY5NDljOWQ5MGIxNTMwMjBjOTE5NWIzZmVkZmFiODkxNzkxNjM3ZTk2MGIwOThjNjUyOGQyZTNiNjBlYmNlNjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.RK-YhARLRIRcJRYytuR5wfhdsPuNJoaqRlAcoWZ3Ch8">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/52661553-0faa-4714-9be8-a8212dcfdff6">
 
 To use a Quill text editor, you need to add `<x-tc-quill-editor>` to your blade and set `wire:model` (it's not possible to use `live` or `blur`).
 ```blade
@@ -584,7 +584,7 @@ If you want to change the theme of the editor or make any other modifications, y
 
 ### Datetime picker (Flatpickr)
 
-<img src="https://private-user-images.githubusercontent.com/23532087/309473466-da64cac0-22fc-41c7-9bee-da2fe7b85255.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDkzODMyMzMsIm5iZiI6MTcwOTM4MjkzMywicGF0aCI6Ii8yMzUzMjA4Ny8zMDk0NzM0NjYtZGE2NGNhYzAtMjJmYy00MWM3LTliZWUtZGEyZmU3Yjg1MjU1LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAzMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMzAyVDEyMzUzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE5YWJkYzUxOTU5MDRjYTJlYThlYzQyYTUwNDVkMGZjNjgwOTcwOGJkNjg4MTEzMzcxODJmNTVjODkxZjIyNzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-jTYX0XL859Cefd1D5zNs8vv2HRrJHlVA2vlyeTujwo">
+<img src="https://github.com/VojislavD/tall-components/assets/23532087/bccf46a4-799a-405b-8673-63743990af25">
 
 To use the datetime picker, you need to add `<x-tc-datetime-picker>` to your blade and set `wire:model`.
 
